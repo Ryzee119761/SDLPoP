@@ -18,8 +18,8 @@ jobs:
 
     - name: Install and Setup Dependencies
       run: |
-        sudo apt install mingw-w64 libsdl2-dev libsdl2-image-dev
-        #Create filenames
+        sudo apt install libsdl2-dev libsdl2-image-dev
+        #Create output filename
         export FILENAME_LINUX=sdlpop_linux_$(date -u +'%Y%m%d%H%M')
         echo "::set-env name=FILENAME_LINUX::$FILENAME_LINUX"
         
@@ -28,7 +28,6 @@ jobs:
         cd src/
         cmake .
         make
-        ls
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
@@ -50,7 +49,7 @@ jobs:
     steps:
     - name: Install and Setup Dependencies
       run: |
-        sudo apt install mingw-w64 libsdl2-dev libsdl2-image-dev
+        sudo apt install mingw-w64
         # Setup MINGW as main compiler
         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/i686-w64-mingw32-gcc 10
         sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/i686-w64-mingw32-g++ 10
@@ -63,7 +62,7 @@ jobs:
         tar xzf SDL2_image-devel-2.0.5-mingw.tar.gz
         sudo cp -r SDL2-2.0.12/i686-w64-mingw32/* /usr/i686-w64-mingw32/
         sudo cp -r SDL2_image-2.0.5/i686-w64-mingw32/* /usr/i686-w64-mingw32/
-        #Create filenames
+        #Create output filename
         export FILENAME_WIN32=sdlpop_win32_$(date -u +'%Y%m%d%H%M')
         echo "::set-env name=FILENAME_WIN32::$FILENAME_WIN32"
         
