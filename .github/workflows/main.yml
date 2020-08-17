@@ -69,7 +69,7 @@ jobs:
     - name : Compile
       run: |
         cd src/
-        cmake -DWIN32=1 -DCMAKE_SYSTEM_NAME=Windows .
+        cmake -DWIN32=1 -DCMAKE_SYSTEM_NAME=Windows -DCMAKE_C_COMPILER=i686-w64-mingw32-gcc -DCMAKE_CXX_COMPILER=i686-w64-mingw32-g++ .
         mingw32-make
 
     - name : Collate Output Files
