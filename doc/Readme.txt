@@ -1,6 +1,8 @@
 SDLPoP
 ======
 
+![Build](https://github.com/Ryzee119761/SDLPoP/workflows/Build/badge.svg)
+
 An open-source port of Prince of Persia, based on the disassembly of the DOS version.
 
 Links
