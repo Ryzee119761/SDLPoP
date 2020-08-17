@@ -7,6 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
+  #BUILD LINUX
   Linux:
     env:
       FILENAME_LINUX: 0
@@ -44,6 +45,7 @@ jobs:
           prince
           SDLPoP.ini
 
+  #BUILD WIN32
   Windows:
     env:
       FILENAME_WIN32: 0
