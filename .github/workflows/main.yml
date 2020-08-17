@@ -51,10 +51,6 @@ jobs:
     - name: Install and Setup Dependencies
       run: |
         sudo apt install mingw-w64
-        # Setup MINGW as main compiler
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/i686-w64-mingw32-gcc 10
-        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/i686-w64-mingw32-g++ 10
-        sudo ln -s /usr/bin/i686-w64-mingw32-windres /usr/bin/windres
         # Setup SDL2 and SDL2_Image
         cd ~
         wget https://libsdl.org/release/SDL2-devel-2.0.12-mingw.tar.gz
@@ -74,7 +70,7 @@ jobs:
       run: |
         cd src/
         cmake -DWIN32=1 -DCMAKE_SYSTEM_NAME=Windows .
-        make
+        mingw32-make
 
     - name : Collate Output Files
       run: |
