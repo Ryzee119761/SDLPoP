@@ -10,9 +10,9 @@ jobs:
   Linux:
     env:
       FILENAME_LINUX: 0
-    
+
     runs-on: ubuntu-latest
-     
+
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
         #Create output filename
         export FILENAME_LINUX=SDLPoP_Linux_$(date -u +'%Y%m%d%H%M')
         echo "::set-env name=FILENAME_LINUX::$FILENAME_LINUX"
-        
+
     - name: Compile
       run: |
         cd src/
@@ -47,7 +47,7 @@ jobs:
   Windows:
     env:
       FILENAME_WIN32: 0
- 
+
     runs-on: ubuntu-latest
 
     steps:
@@ -70,7 +70,7 @@ jobs:
         #Create output filename
         export FILENAME_WIN32=SDLPoP_Win32_$(date -u +'%Y%m%d%H%M')
         echo "::set-env name=FILENAME_WIN32::$FILENAME_WIN32"
-        
+
     - name: Checkout Repository
       uses: actions/checkout@v2
 
